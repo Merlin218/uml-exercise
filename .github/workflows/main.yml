@@ -28,14 +28,11 @@ jobs:
         env:
           CI: true
       # Deploy
-      - name: Deploy
-        uses: Pendect/action-rsyncer@v1.1.0
-        env:
-          DEPLOY_KEY: ${{secrets.DEPLOY_KEY }}
+      - name: Upload COS
+        uses: zkqiang/tencent-cos-action@v0.1.0
         with:
-          flags: '-avzr'
-          options: ''
-          ssh_options: ''
-          src: 'dist/'
-          dest: 'root@119.91.229.224:/www/wwwroot/uml-exercise'
-          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+          args: upload -rs --delete -y ./dist/ /www/wwwroot/uml-exercise
+          secret_id: ${{ secrets.SECRET_ID }}
+          secret_key: ${{ secrets.SECRET_KEY }}
+          bucket: ${{ secrets.BUCKET }}
+          region: ap-guangzhou
