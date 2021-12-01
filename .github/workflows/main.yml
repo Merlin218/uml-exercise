@@ -15,11 +15,11 @@ jobs:
       - uses: srt32/git-actions@v0.0.3
         with:
           args: git submodule update --init --recursive
-      # 使用 node:10
-      - name: use Node.js 10
+      # 使用 node:14
+      - name: use Node.js 14
         uses: actions/setup-node@v1
         with:
-          node-version: 10
+          node-version: 14
       # npm install
       - name: npm install and build
         run: |
