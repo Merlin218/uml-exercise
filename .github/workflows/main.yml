@@ -29,11 +29,13 @@ jobs:
           CI: true
       # Deploy
       - name: Deploy
-        uses: easingthemes/ssh-deploy@v2.0.7
+        uses: Pendect/action-rsyncer@v1.1.0
         env:
+          DEPLOY_KEY: ${{secrets.ACCESS_TOKEN}}
+        with:
+          flags: '-avzr'
+          options: ''
+          ssh_options: ''
+          src: 'dist/'
+          dest: 'root@119.91.229.224:/www/wwwroot/uml-exercise'
           SSH_PRIVATE_KEY: ${{ secrets.ACCESS_TOKEN }}
-          ARGS: "-avz --delete"
-          SOURCE: "dist/"
-          REMOTE_HOST: ${{ secrets.HOST }}
-          REMOTE_USER: ${{ secrets.USER }}
-          TARGET: "/www/wwwroot/uml-exercise"
