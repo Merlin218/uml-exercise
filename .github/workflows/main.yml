@@ -28,18 +28,13 @@ jobs:
         env:
           CI: true
       # Deploy
-      - name: Deploy to Server
-        uses: easingthemes/ssh-deploy@v2.0.7
+      - name: Deploy to Server  # 第四步，rsync推送文件
+        uses: AEnterprise/rsync-deploy@v1.0  # 使用别人包装好的步骤镜像
         env:
-            # 本地.ssh文件下的私钥id_rsa，存在secrets的TOKEN中
-            SSH_PRIVATE_KEY: ${{ secrets.TOKEN }} 
-            # 复制操作的参数。"-avzr --delete"意味部署时清空服务器目标目录下的文件
-            ARGS: "-avzr --delete" 
-            # 源目录，相对于$GITHUB_WORKSPACE根目录的路径
-            SOURCE: "dist/" 
-            # 服务器域名
-            REMOTE_HOST: ${{ secrets.HOST }}
-            # 腾讯云默认用户名为root
-            REMOTE_USER: ${{ secrets.USERNAME }}
-            # 目标目录
-            TARGET: ${{ secrets.TARGET }}
+          DEPLOY_KEY: ${{ secrets.TOKEN }}   # 引用配置，SSH私钥
+          ARGS: -avz --delete --exclude='*.pyc'   # rsync参数，排除.pyc文件
+          SERVER_PORT: '22'  # SSH端口
+          FOLDER: ./dist/*  # 要推送的文件夹，路径相对于代码仓库的根目录
+          SERVER_IP: ${{ secrets.HOST }}  # 引用配置，服务器的host名（IP或者域名domain.com）
+          USERNAME: ${{ secrets.USERNAME }}  # 引用配置，服务器登录名
+          SERVER_DESTINATION: ${{ secrets.TARGET }}   # 部署到目标文件夹
