@@ -1,7 +1,5 @@
 <template>
   <a-menu
-    :accordion="true"
-    showCollapseButton
     v-model:openKeys="openKeys"
     v-model:selectedKeys="selectedKeys"
     @sub-menu-click="selectedKeys = [$event + '-0']"
@@ -24,26 +22,33 @@
 </template>
 <script>
 import { computed, ref, reactive } from "vue";
-import { navBarConfig } from "../../configs/index.config";
+import { navBarConfig as indexNavBar } from "../../configs/index.config";
+import { navBarConfig as adminNavBar } from "../../configs/admin.config";
 import { useStore } from "vuex";
+import { useRouter } from "vue-router";
 export default {
   name: "layout-sider",
   setup() {
     const store = useStore();
-
-    let navBar = reactive(navBarConfig);
-
-    let selectedKeys = ref(["0-0"]);
-    let openKeys = ref(["0"]);
+    const router = useRouter();
+    let navBar = reactive(
+      router.currentRoute.value.name == "index" ? indexNavBar : adminNavBar
+    );
     let navBarSelected = computed(() => {
       openKeys.value = ["0"];
       selectedKeys.value = ["0-0"];
       return store.state.navBarSelected;
     });
+    let selectedKeys = ref(["0-0"]);
+    let openKeys = ref(["0"]);
     return {
-      navBarSelected,
-      navBarConfig,
+      navBarSelected: computed(() => {
+        openKeys.value = ["0"];
+        selectedKeys.value = ["0-0"];
+        return store.state.navBarSelected;
+      }),
       selectedKeys,
+      navBarSelected,
       navBar,
       openKeys,
     };

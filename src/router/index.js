@@ -1,9 +1,7 @@
-import { h } from "@vue/runtime-core";
 import { createRouter, createWebHistory } from "vue-router";
 import Admin from "../views/Admin.vue";
 import Index from "../views/index.vue";
 import login from "../views/login.vue";
-import testVue from "../views/test.vue";
 const routes = [
   {
     path: "/",
@@ -25,15 +23,10 @@ const routes = [
     name: "admin",
     component: Admin,
   },
-  {
-    path: "/test",
-    name: "test",
-    component: testVue,
-  },
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory("/uml-exercise/"),
   routes,
 });
 

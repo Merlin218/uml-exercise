@@ -1,7 +1,21 @@
 <template>
   <layout>
     <template #header>
-      <layout-header :navBarConfig="indexConfig">
+      <div
+        style="
+          height: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 60px;
+          color: rgb(102, 102, 102);
+        "
+      >
+        Header
+      </div>
+    </template>
+    <template #nav
+      ><layout-header :navBarConfig="indexConfig">
         <template #title
           ><span
             :style="{
@@ -10,11 +24,11 @@
             >首页</span
           ></template
         >
-        <template #footer
-          ><a-button :style="{ alignSelf: 'flex-end' }">jjj</a-button></template
+        <template #footer>
+          <a-button @click="router.push('login')">登录</a-button></template
         >
-      </layout-header>
-    </template>
+      </layout-header></template
+    >
     <template #sider>
       <layout-sider></layout-sider>
     </template>
@@ -23,14 +37,22 @@
 
 <script>
 import Layout from "../components/Layout/Layout.vue";
-import LayoutHeader from "../components/Layout/LayoutHeader.vue";
+import LayoutHeader from "../components/Layout/LayoutNav.vue";
 import LayoutSider from "../components/Layout/LayoutSider.vue";
-import { navBarConfig as indexConfig } from "../configs/index.config";
+import {
+  navBarConfig as indexConfig,
+  navBarTheme,
+} from "../configs/index.config";
+import { provide } from "vue";
+import { useRouter } from "vue-router";
 export default {
   components: { Layout, LayoutHeader, LayoutSider },
   setup() {
+    const router = useRouter();
+    provide("theme", navBarTheme);
     return {
       indexConfig,
+      router,
     };
   },
 };

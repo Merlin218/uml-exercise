@@ -102,3 +102,5 @@ export const navBarConfig = [
     ],
   },
 ];
+
+export const navBarTheme = 'light'
