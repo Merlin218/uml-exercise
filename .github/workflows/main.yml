@@ -39,5 +39,5 @@ jobs:
           user: ${{ secrets.USERNAME }}
           pass: ${{ secrets.PASSWORD }}
           connect_timeout: 10s
-          local: dist/
+          local: /home/runner/work/uml-exercise/uml-exercise/dist/*
           remote: /www/wwwroot/uml-exercise
