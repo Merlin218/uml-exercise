@@ -13,7 +13,7 @@ vue3 + vuex + vite + arco design
 
 ## File Structure 项目结构
 
-```json
+```
 |—— dist // 打包后的文件
 ├── public // 公共资源
 └── src // 项目内容
