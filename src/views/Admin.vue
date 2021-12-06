@@ -17,7 +17,7 @@
               border: '1px solid #fff',
               color: '#fff',
             }"
-            @click="router.push('index')"
+            @click="router.push('/index')"
             >返回首页</a-button
           ></template
         >
@@ -26,24 +26,28 @@
     <template #sider>
       <layout-sider></layout-sider>
     </template>
+    <template #content>
+      <router-view></router-view>
+    </template>
   </layout>
 </template>
 
 <script>
-import Layout from "../components/Layout/Layout.vue";
-import LayoutHeader from "../components/Layout/LayoutNav.vue";
-import LayoutSider from "../components/Layout/LayoutSider.vue";
+import { provide } from 'vue';
+import { useRouter } from 'vue-router';
+import Layout from '../components/Layout/Layout.vue';
+import LayoutHeader from '../components/Layout/LayoutNav.vue';
+import LayoutSider from '../components/Layout/LayoutSider.vue';
 import {
   navBarConfig as adminConfig,
   navBarTheme,
-} from "../configs/admin.config";
-import { provide } from "@vue/runtime-core";
-import { useRouter } from "vue-router";
+} from '../configs/admin.config';
+
 export default {
   components: { Layout, LayoutHeader, LayoutSider },
   setup() {
     const router = useRouter();
-    provide("theme", navBarTheme);
+    provide('theme', navBarTheme);
     return {
       adminConfig,
       router,

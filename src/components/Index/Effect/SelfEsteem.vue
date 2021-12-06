@@ -1,11 +1,11 @@
 <template>
-$END$
+
 </template>
 
 <script>
 export default {
-name: "SelfEstee,"
-}
+  name: 'SelfEsteem',
+};
 </script>
 
 <style scoped>

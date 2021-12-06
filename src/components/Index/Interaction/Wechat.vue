@@ -1,11 +1,11 @@
 <template>
-$END$
+
 </template>
 
 <script>
 export default {
-name: "Wechat"
-}
+  name: 'Wechat',
+};
 </script>
 
 <style scoped>

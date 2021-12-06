@@ -1,56 +1,59 @@
 <template>
   <a-menu
-    v-model:openKeys="openKeys"
-    v-model:selectedKeys="selectedKeys"
-    @sub-menu-click="selectedKeys = [$event + '-0']"
-    :style="{
+      v-if="navBar[navBarSelected].modules"
+      v-model:selectedKeys="selectedKeys"
+      @sub-menu-click="selectedKeys = [$event]"
+      :style="{
       maxHeight: '82vh',
     }"
   >
-    <a-sub-menu
-      v-for="module in navBar[navBarSelected].modules"
-      :key="module.key"
-    >
-      <template #title>{{ module.name }}</template>
       <a-menu-item
-        v-for="child in module.children"
-        :key="module.key + '-' + child.key"
-        >{{ child.name }}</a-menu-item
-      >
-    </a-sub-menu>
+          v-for="module in navBar[navBarSelected].modules"
+          :key="module.key"
+          @click="toPath(module)"
+      >{{ module.name }}
+      </a-menu-item>
   </a-menu>
 </template>
 <script>
-import { computed, ref, reactive } from "vue";
-import { navBarConfig as indexNavBar } from "../../configs/index.config";
-import { navBarConfig as adminNavBar } from "../../configs/admin.config";
-import { useStore } from "vuex";
-import { useRouter } from "vue-router";
+import { computed, reactive, ref } from 'vue';
+import { useStore } from 'vuex';
+import { useRouter } from 'vue-router';
+import { navBarConfig as indexNavBar } from '../../configs/index.config';
+import { navBarConfig as adminNavBar } from '../../configs/admin.config';
+
 export default {
-  name: "layout-sider",
+  name: 'layout-sider',
   setup() {
     const store = useStore();
     const router = useRouter();
-    let navBar = reactive(
-      router.currentRoute.value.name == "index" ? indexNavBar : adminNavBar
+    const navBar = reactive(
+      router.currentRoute.value.fullPath.includes('/index') ? indexNavBar : adminNavBar,
     );
-    let navBarSelected = computed(() => {
-      openKeys.value = ["0"];
-      selectedKeys.value = ["0-0"];
+    const selectedKeys = ref(['0']);
+    const navBarSelected = computed(() => {
+      selectedKeys.value = ['0'];
       return store.state.navBarSelected;
     });
-    let selectedKeys = ref(["0-0"]);
-    let openKeys = ref(["0"]);
+    const toPath = (module) => {
+      if (module.component) {
+        const prefix = router.currentRoute.value.fullPath.includes('/index') ? '/index/' : '/admin/';
+        router.push(
+          `${prefix
+            + navBar[navBarSelected.value].routerName
+          }/${
+            module.routerName
+          }`,
+        );
+      }
+    };
+
     return {
-      navBarSelected: computed(() => {
-        openKeys.value = ["0"];
-        selectedKeys.value = ["0-0"];
-        return store.state.navBarSelected;
-      }),
+      router,
       selectedKeys,
       navBarSelected,
       navBar,
-      openKeys,
+      toPath,
     };
   },
 };

@@ -1,11 +1,11 @@
 <template>
-$END$
+
 </template>
 
 <script>
 export default {
-name: "Student"
-}
+  name: 'Student',
+};
 </script>
 
 <style scoped>

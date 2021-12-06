@@ -1,11 +1,11 @@
 <template>
-$END$
+
 </template>
 
 <script>
 export default {
-name: "createAdmin"
-}
+  name: 'createAdmin',
+};
 </script>
 
 <style scoped>

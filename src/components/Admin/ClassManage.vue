@@ -1,11 +1,11 @@
 <template>
-$END$
+
 </template>
 
 <script>
 export default {
-name: "ClassManage"
-}
+  name: 'ClassManage',
+};
 </script>
 
 <style scoped>
