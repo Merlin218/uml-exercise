@@ -32,23 +32,7 @@ jobs:
         env:
             SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
             ARGS: '-rltgoDzvO --delete'
-            SOURCE: dist # 这是要复制到阿里云静态服务器的文件夹名称
-            REMOTE_HOST: ${{ secrets.HOST }} # 你的阿里云公网地址
-            REMOTE_USER: root # 阿里云登录后默认为 root 用户，并且所在文件夹为 root
-            TARGET: /www/wwwroot/uml-exercise # 打包后的 dist 文件夹将放在 /root/node-server
-#       # Deploy
-#       - name: Deploy
-#         # 因为构建之后，需要把代码上传到服务器上，所以需要连接到ssh，并且做一个拷贝操作
-#         uses: cross-the-world/scp-pipeline@master
-#         env:
-#           WELCOME: "ssh scp ssh pipelines"
-#           LASTSSH: "Doing something after copying"
-#         with:
-#           host: ${{ secrets.HOST }}
-#           user: ${{ secrets.USERNAME }}
-#           pass: ${{ secrets.PASSWORD }}
-#           connect_timeout: 10s
-#           local: /home/runner/work/uml-exercise/uml-exercise/dist/*
-#           remote: /www/wwwroot/uml-exercise
-#           script: cd ~ && 
-            
+            SOURCE: dist/*
+            REMOTE_HOST: ${{ secrets.HOST }}
+            REMOTE_USER: root
+            TARGET: /www/wwwroot/www.merlin218.top/uml-exercise
