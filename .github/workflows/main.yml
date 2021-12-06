@@ -41,3 +41,6 @@ jobs:
           connect_timeout: 10s
           local: /home/runner/work/uml-exercise/uml-exercise/dist/*
           remote: /www/wwwroot/uml-exercise
+          script: |
+            ls
+            
