@@ -17,7 +17,7 @@
               border: '1px solid #fff',
               color: '#fff',
             }"
-            @click="router.push('/index')"
+            @click="router.push('/index/home')"
             >返回首页</a-button
           ></template
         >

@@ -8,6 +8,7 @@ import MakeStudyPlan from '../components/Admin/MakeStudyPlan.vue';
 import ClassManage from '../components/Admin/ClassManage.vue';
 import TeacherTeam from '../components/Admin/ContentMaintain/TeacherTeam.vue';
 import CreateAdmin from '../components/Admin/AccountMaintain/CreateAdmin.vue';
+import AdminList from '../components/Admin/AccountMaintain/AdminList.vue';
 
 let navIndex = 0;
 let moduleIndex = 0;
@@ -18,24 +19,9 @@ const config = [
     routerName: 'ContentMaintain',
     modules: [
       {
-        name: '课程概况',
+        name: '评价管理',
         routerName: 'Introduct',
         component: Introduct,
-      },
-      {
-        name: '教师队伍',
-        routerName: 'teacherTeam',
-        component: TeacherTeam,
-      },
-      {
-        name: '教学安排',
-        routerName: 'teachingArrange',
-        component: TeachingArrange,
-      },
-      {
-        name: '教学资源',
-        routerName: 'teachingResource',
-        component: TeachingResource,
       },
     ],
   },
@@ -44,19 +30,14 @@ const config = [
     routerName: 'AccountMaintain',
     modules: [
       {
+        name: '管理员列表',
+        routerName: 'AdminList',
+        component: AdminList,
+      },
+      {
         name: '创建管理员',
         routerName: 'createAdmin',
         component: CreateAdmin,
-      },
-      {
-        name: '创建教师用户',
-        routerName: 'createTeacher',
-        component: CreateTeacher,
-      },
-      {
-        name: '创建学生用户',
-        routerName: 'createStudent',
-        component: CreateStudent,
       },
       {
         name: '修改登录密码',

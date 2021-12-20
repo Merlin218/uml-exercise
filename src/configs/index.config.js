@@ -160,7 +160,8 @@ const config = [
         component: Award,
       },
     ],
-  }, {
+  },
+  {
     name: '教学资源',
     routerName: 'resource',
     modules: [
@@ -195,7 +196,8 @@ const config = [
         component: Documentation,
       },
     ],
-  }, {
+  },
+  {
     name: '教学管理',
     routerName: 'manage',
     modules: [
@@ -225,20 +227,11 @@ const config = [
         component: Homework,
       },
     ],
-  }, {
+  },
+  {
     name: '教学效果',
     routerName: 'effect',
     modules: [
-      {
-        name: '校外专家评价',
-        routerName: 'expert',
-        component: Expert,
-      },
-      {
-        name: '校内督导评价',
-        routerName: 'supervise',
-        component: Supervise,
-      },
       {
         name: '教师自我评价',
         routerName: 'self-esteem',
@@ -253,6 +246,11 @@ const config = [
         name: '社会评价',
         routerName: 'social',
         component: Social,
+      },
+      {
+        name: '校外专家评价',
+        routerName: 'expert',
+        component: Expert,
       },
       {
         name: '教学评估',

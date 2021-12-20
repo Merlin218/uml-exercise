@@ -35,11 +35,12 @@
           justifyContent:'space-between',
         }"
         >
+
           <div :style="{
           marginLeft:'20px'
           }">
-            <a-button type="outline" size="mini" :style="{marginRight:'15px'}">注册</a-button>
-            <a-button type="outline" status="danger" size="mini">忘记密码</a-button>
+            <!-- <a-button type="outline" size="mini" :style="{marginRight:'15px'}">注册</a-button>
+            <a-button type="outline" status="danger" size="mini">忘记密码</a-button>-->
           </div>
           <a-button :style="{marginRight:'20px'}" type="primary" @click="handleLogin">登录</a-button>
         </div>
@@ -51,6 +52,7 @@
 import { useRouter } from 'vue-router';
 import { reactive } from 'vue';
 import { Message } from '@arco-design/web-vue';
+import { login } from '../api/module/user';
 
 export default {
   name: 'login',
@@ -67,9 +69,11 @@ export default {
       }
       if (!loginForm.password) {
         Message.error('请输入密码');
-        return;
       }
-      router.push('admin');
+      login(loginForm.username, loginForm.password).then((res) => {
+        window.localStorage.setItem('authority', res.data.authority);
+        router.push('/admin');
+      });
     };
     return {
       handleLogin,

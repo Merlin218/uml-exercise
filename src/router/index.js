@@ -70,7 +70,7 @@ const routes = [
   },
 ].concat(
   handleRedirectRoutes('index', IndexNav),
-  handleRedirectRoutes('admin', AdminNav)
+  handleRedirectRoutes('admin', AdminNav),
 );
 
 const router = createRouter({

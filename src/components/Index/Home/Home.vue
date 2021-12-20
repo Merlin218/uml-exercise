@@ -1,12 +1,21 @@
 <template>
-  <div style="width:100%;height: 70vh;background-color: #fff;margin-top: 20px;"></div>
+    <Header></Header>
+    <div
+      :style="{
+        width: '100%',
+        backgroundColor: '#fff',
+        marginTop: '20px',
+      }"
+    >
+    <CourseBlock></CourseBlock>
+    </div>
 </template>
 
-<script>
-export default {
-  name: "Home",
-};
+<script setup>
+import Header from '../../Layout/Header.vue';
+import Carousel from './carousel.vue';
+import CourseBlock from './courseBlock.vue';
+
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

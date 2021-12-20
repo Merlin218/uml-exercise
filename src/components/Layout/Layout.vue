@@ -7,7 +7,7 @@
       <slot name="header"></slot>
     </a-layout-header>
     <a-layout :style="{
-        padding: '10px 100px',
+        padding: '10px 300px',
         flexFlow: 'column nowrap',
       }">
       <slot name="nav"></slot>
@@ -51,7 +51,6 @@ export default {
     const router = useRouter();
     const isNotHome = computed(() => router.currentRoute.value.name !== 'home');
     const hasModule = computed(() => !router.currentRoute.value.query.single);
-    console.log(router.currentRoute.value);
     return { isNotHome, hasModule };
   },
 };
