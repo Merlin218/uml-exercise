@@ -24,7 +24,9 @@
   </a-menu>
 </template>
 <script>
-import { inject, reactive, ref } from 'vue';
+import {
+  inject, reactive, ref, watch,
+} from 'vue';
 import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
 
@@ -49,6 +51,14 @@ export default {
     const prefix = ref(router.currentRoute.value.fullPath.includes('/index') ? '/index/' : '/admin/');
     // 配置主题
     const theme = inject('theme');
+
+    // watch(
+    //   () => router.currentRoute.value.fullPath,
+    //   (params) => {
+    //     selectedKeys.value = [navBar.findIndex((item) => item.key === params.split('/')[2])];
+    //   },
+    // );
+
     return {
       navBar,
       selectedKeys,

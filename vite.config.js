@@ -9,14 +9,19 @@ export default defineConfig({
       '/assets': 'src/assets',
     },
   },
-  server: {
-    proxy: {
-      '/api': {
-        target: 'http://10.62.248.245:8888/api',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
-      },
-    },
-  },
+  // server: {
+  //   proxy: {
+  //     '/api1': {
+  //       target: 'http://10.62.119.9:8888',
+  //       changeOrigin: true,
+  //       rewrite: (path) => path.replace(/^\/api1/, ''),
+  //     },
+  //     '/api': {
+  //       target: 'http://10.62.248.245:8888/api',
+  //       changeOrigin: true,
+  //       rewrite: (path) => path.replace(/^\/api/, ''),
+  //     },
+  //   },
+  // },
   plugins: [vue()],
 });

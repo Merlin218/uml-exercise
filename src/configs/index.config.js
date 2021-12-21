@@ -207,11 +207,6 @@ const config = [
         component: CoursePlan,
       },
       {
-        name: '上课班级',
-        routerName: 'class',
-        component: Class,
-      },
-      {
         name: '班级花名册',
         routerName: 'roster',
         component: Roster,
@@ -220,11 +215,6 @@ const config = [
         name: '班级成绩单',
         routerName: 'grade',
         component: Grade,
-      },
-      {
-        name: '学生作业案例',
-        routerName: 'homework',
-        component: Homework,
       },
     ],
   },

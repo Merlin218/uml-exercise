@@ -16,7 +16,9 @@
   </a-menu>
 </template>
 <script>
-import { computed, reactive, ref } from 'vue';
+import {
+  computed, reactive, ref, watch,
+} from 'vue';
 import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
 import { navBarConfig as indexNavBar } from '../../configs/index.config';

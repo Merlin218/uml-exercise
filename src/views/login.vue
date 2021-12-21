@@ -72,7 +72,7 @@ export default {
       }
       login(loginForm.username, loginForm.password).then((res) => {
         window.localStorage.setItem('authority', res.data.authority);
-        router.push('/admin');
+        router.push('/admin/ContentMaintain/Introduct');
       });
     };
     return {

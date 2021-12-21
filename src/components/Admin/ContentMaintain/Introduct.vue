@@ -13,7 +13,7 @@
   </a-radio-group>
   <a-table :data="list">
     <template #columns>
-      <a-table-column title="ID" data-index="id"></a-table-column>
+      <a-table-column title="ID" data-index="id" width="50"></a-table-column>
       <a-table-column title="评论内容" data-index="content"></a-table-column>
       <a-table-column title="类型" data-index="type">
         <template #cell="{ record }">
