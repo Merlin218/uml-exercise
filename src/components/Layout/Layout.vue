@@ -50,7 +50,7 @@ export default {
   setup() {
     const router = useRouter();
     const isNotHome = computed(() => router.currentRoute.value.name !== 'home');
-    const hasModule = computed(() => !router.currentRoute.value.query.single);
+    const hasModule = computed(() => !router.currentRoute.value.meta.single);
     return { isNotHome, hasModule };
   },
 };

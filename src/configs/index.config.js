@@ -45,7 +45,7 @@ const config = [
     name: '首页',
     routerName: 'home',
     component: Home,
-    query: { single: true },
+    meta: { single: true },
   },
   {
     name: '课程概况',

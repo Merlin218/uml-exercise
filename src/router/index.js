@@ -28,6 +28,10 @@ const handleChildRoutes = (navBarConfig) => {
             name: `${nav.routerName}-${module.routerName}`,
             path: `${nav.routerName}/${module.routerName}`,
             component: module.component,
+            meta: {
+              nav: nav.key,
+              module: module.key,
+            },
           },
         ]);
       });

@@ -18,7 +18,7 @@
       placeholder="请输入你的评论..."
       :max-length="50"
       allow-clear
-      :auto-size="{
+      :autoSize="{
         minRows: 3,
         maxRows: 5,
       }"
