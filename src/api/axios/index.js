@@ -26,7 +26,7 @@ export function request(axiosConfig, custom) {
 // 封装创建请求
 export function createRequest(requestConfig) {
   return new Promise((resolve, reject) => {
-    request(requestConfig, { baseURL: '/api' })
+    request(requestConfig, { baseURL: '/uml-exercise/api' })
       .then((res) => {
         resolve(res);
       })
