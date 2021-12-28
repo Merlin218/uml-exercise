@@ -5,6 +5,8 @@
       <a-typography-paragraph :style="{ marginBottom: '20px' }" :heading="4">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;东莞理工学院，近几年来的发展趋势整体来说是向上的。学校有松山湖、莞城两个校区，共占地2340亩，其中松山湖校区占地2000亩。
       </a-typography-paragraph>
+<a-spin :loading="loading" dot style="width:100%" tip="加载中...">
+
       <a-list size="large">
         <a-list-item v-for="(item, index) in list" :key="item.id"
           ><icon-thumb-up /> 评价{{ index + 1 }}：{{
@@ -12,6 +14,7 @@
           }}</a-list-item
         >
       </a-list>
+      </a-spin>
     </a-typography-paragraph>
 
     <a-textarea
@@ -40,10 +43,12 @@ import { onMounted, ref } from 'vue';
 import { addComment, getCommentByType } from '../../../api/module/comment';
 
 const list = ref([]);
-
+const loading = ref(false);
 const getData = async () => {
+  loading.value = true;
   const res = await getCommentByType(3);
   list.value = res.data;
+  loading.value = false;
 };
 
 onMounted(async () => {

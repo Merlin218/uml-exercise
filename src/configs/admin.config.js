@@ -39,25 +39,25 @@ const config = [
         routerName: 'createAdmin',
         component: CreateAdmin,
       },
-      {
-        name: '修改登录密码',
-        routerName: 'changePassword',
-        component: ChangePassword,
-      },
+      // {
+      //   name: '修改登录密码',
+      //   routerName: 'changePassword',
+      //   component: ChangePassword,
+      // },
     ],
   },
-  {
-    name: '制订开课计划',
-    routerName: 'MakeStudyPlan',
-    component: MakeStudyPlan,
-    query: { single: true },
-  },
-  {
-    name: '班级管理',
-    routerName: 'ClassManage',
-    component: ClassManage,
-    query: { single: true },
-  },
+  // {
+  //   name: '制订开课计划',
+  //   routerName: 'MakeStudyPlan',
+  //   component: MakeStudyPlan,
+  //   query: { single: true },
+  // },
+  // {
+  //   name: '班级管理',
+  //   routerName: 'ClassManage',
+  //   component: ClassManage,
+  //   query: { single: true },
+  // },
 ];
 
 export const navBarConfig = config.map((nav) => {

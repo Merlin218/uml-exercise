@@ -1,4 +1,6 @@
 <template>
+<a-spin :loading="loading" dot style="width:100%" tip="加载中...">
+
   <a-table :data="list">
     <template #columns>
       <a-table-column title="ID" data-index="student_id"  width="50"></a-table-column>
@@ -18,6 +20,7 @@
       </a-table-column>
     </template>
   </a-table>
+  </a-spin>
 </template>
 
 <script setup>
@@ -25,12 +28,12 @@ import { onMounted, ref } from '@vue/runtime-core';
 import { findRoster } from '../../../api/module/class';
 
 const list = ref([]);
-
-onMounted(() => {
-  findRoster(1, 10).then((res) => {
-    list.value = res.data.list;
-    console.log(list.value);
-  });
+const loading = ref(false);
+onMounted(async () => {
+  loading.value = true;
+  const res = await findRoster(1, 10);
+  list.value = res.data.list;
+  loading.value = false;
 });
 </script>
 

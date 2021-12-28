@@ -11,13 +11,13 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      // '/api1': {
-      //   target: 'http://10.62.119.9:8888',
-      //   changeOrigin: true,
-      //   rewrite: (path) => path.replace(/^\/api1/, ''),
-      // },
+      '/dev': {
+        target: 'http://47.107.60.182:8000',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/dev/, ''),
+      },
       '/api': {
-        target: 'https://www.merlin218.top/api',
+        target: 'https://www.merlin218.top/uml-exercise/api',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },

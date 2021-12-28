@@ -17,3 +17,12 @@ export const findCoursePlanList = (page, pageSize) => createRequest1({
     pageSize,
   },
 });
+
+export const findScore = (page, pageSize) => createRequest1({
+  url: '/manage/findScore',
+  method: 'get',
+  data: {
+    page,
+    pageSize,
+  },
+});

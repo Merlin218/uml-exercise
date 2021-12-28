@@ -47,156 +47,156 @@ const config = [
     component: Home,
     meta: { single: true },
   },
-  {
-    name: '课程概况',
-    routerName: 'course',
-    modules: [
-      {
-        name: '课程简介',
-        routerName: 'Introduction',
-        component: Introduction,
-      },
-      {
-        name: '课程特色',
-        routerName: 'feature',
-        component: Feature,
-      },
-      {
-        name: '教材与参考资料',
-        routerName: 'textbook',
-        component: Textbook,
-      },
-      {
-        name: '历史沿革',
-        routerName: 'history',
-        component: History,
-      },
-    ],
-  },
-  {
-    name: '教师队伍',
-    routerName: 'teacher',
-    modules: [
-      {
-        name: '课程负责人',
-        routerName: 'leader',
-        component: Leader,
-      },
-      {
-        name: '课程教学团队',
-        routerName: 'team',
-        component: Team,
-      },
-      {
-        name: '主讲教室',
-        routerName: 'classroom',
-        component: Classroom,
-      },
-      {
-        name: '青年教师培养',
-        routerName: 'train',
-        component: Train,
-      },
-    ],
-  },
-  {
-    name: '教学安排',
-    routerName: 'teaching',
-    modules: [
-      {
-        name: '教学大纲',
-        routerName: 'outline',
-        component: Outline,
-      },
-      {
-        name: '教学日历',
-        routerName: 'calendar',
-        component: Calendar,
-      },
-      {
-        name: '教学内容',
-        routerName: 'content',
-        component: Content,
-      },
-      {
-        name: '授课计划',
-        routerName: 'plan',
-        component: Plan,
-      },
-      {
-        name: '教学难重点',
-        routerName: 'focus',
-        component: Focus,
-      },
-      {
-        name: '教学方法与手段',
-        routerName: 'method',
-        component: Method,
-      },
-    ],
-  },
-  {
-    name: '教学研究改革',
-    routerName: 'reform',
-    modules: [
-      {
-        name: '教学改革措施',
-        routerName: 'measure',
-        component: Measure,
-      },
-      {
-        name: '教学改革立项',
-        routerName: 'project',
-        component: Project,
-      },
-      {
-        name: '教学改革成果',
-        routerName: 'achievement',
-        component: Achievement,
-      },
-      {
-        name: '教学表彰和奖励',
-        routerName: 'award',
-        component: Award,
-      },
-    ],
-  },
-  {
-    name: '教学资源',
-    routerName: 'resource',
-    modules: [
-      {
-        name: '课程课件',
-        routerName: 'courseware',
-        component: Courseware,
-      },
-      {
-        name: '教学录像',
-        routerName: 'video',
-        component: Video,
-      },
-      {
-        name: '习题库',
-        routerName: 'exercise',
-        component: Exercise,
-      },
-      {
-        name: '案例库',
-        routerName: 'case',
-        component: Case,
-      },
-      {
-        name: '实验任务',
-        routerName: 'experiment',
-        component: Experiment,
-      },
-      {
-        name: '技术文档范本',
-        routerName: 'documentation',
-        component: Documentation,
-      },
-    ],
-  },
+  // {
+  //   name: '课程概况',
+  //   routerName: 'course',
+  //   modules: [
+  //     {
+  //       name: '课程简介',
+  //       routerName: 'Introduction',
+  //       component: Introduction,
+  //     },
+  //     {
+  //       name: '课程特色',
+  //       routerName: 'feature',
+  //       component: Feature,
+  //     },
+  //     {
+  //       name: '教材与参考资料',
+  //       routerName: 'textbook',
+  //       component: Textbook,
+  //     },
+  //     {
+  //       name: '历史沿革',
+  //       routerName: 'history',
+  //       component: History,
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: '教师队伍',
+  //   routerName: 'teacher',
+  //   modules: [
+  //     {
+  //       name: '课程负责人',
+  //       routerName: 'leader',
+  //       component: Leader,
+  //     },
+  //     {
+  //       name: '课程教学团队',
+  //       routerName: 'team',
+  //       component: Team,
+  //     },
+  //     {
+  //       name: '主讲教室',
+  //       routerName: 'classroom',
+  //       component: Classroom,
+  //     },
+  //     {
+  //       name: '青年教师培养',
+  //       routerName: 'train',
+  //       component: Train,
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: '教学安排',
+  //   routerName: 'teaching',
+  //   modules: [
+  //     {
+  //       name: '教学大纲',
+  //       routerName: 'outline',
+  //       component: Outline,
+  //     },
+  //     {
+  //       name: '教学日历',
+  //       routerName: 'calendar',
+  //       component: Calendar,
+  //     },
+  //     {
+  //       name: '教学内容',
+  //       routerName: 'content',
+  //       component: Content,
+  //     },
+  //     {
+  //       name: '授课计划',
+  //       routerName: 'plan',
+  //       component: Plan,
+  //     },
+  //     {
+  //       name: '教学难重点',
+  //       routerName: 'focus',
+  //       component: Focus,
+  //     },
+  //     {
+  //       name: '教学方法与手段',
+  //       routerName: 'method',
+  //       component: Method,
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: '教学研究改革',
+  //   routerName: 'reform',
+  //   modules: [
+  //     {
+  //       name: '教学改革措施',
+  //       routerName: 'measure',
+  //       component: Measure,
+  //     },
+  //     {
+  //       name: '教学改革立项',
+  //       routerName: 'project',
+  //       component: Project,
+  //     },
+  //     {
+  //       name: '教学改革成果',
+  //       routerName: 'achievement',
+  //       component: Achievement,
+  //     },
+  //     {
+  //       name: '教学表彰和奖励',
+  //       routerName: 'award',
+  //       component: Award,
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: '教学资源',
+  //   routerName: 'resource',
+  //   modules: [
+  //     {
+  //       name: '课程课件',
+  //       routerName: 'courseware',
+  //       component: Courseware,
+  //     },
+  //     {
+  //       name: '教学录像',
+  //       routerName: 'video',
+  //       component: Video,
+  //     },
+  //     {
+  //       name: '习题库',
+  //       routerName: 'exercise',
+  //       component: Exercise,
+  //     },
+  //     {
+  //       name: '案例库',
+  //       routerName: 'case',
+  //       component: Case,
+  //     },
+  //     {
+  //       name: '实验任务',
+  //       routerName: 'experiment',
+  //       component: Experiment,
+  //     },
+  //     {
+  //       name: '技术文档范本',
+  //       routerName: 'documentation',
+  //       component: Documentation,
+  //     },
+  //   ],
+  // },
   {
     name: '教学管理',
     routerName: 'manage',
@@ -249,22 +249,22 @@ const config = [
       },
     ],
   },
-  {
-    name: '教学互动',
-    routerName: 'Interaction',
-    modules: [
-      {
-        name: '微信群',
-        routerName: 'wechat',
-        component: Wechat,
-      },
-      {
-        name: 'QQ群',
-        routerName: 'qq',
-        component: Qq,
-      },
-    ],
-  },
+  // {
+  //   name: '教学互动',
+  //   routerName: 'Interaction',
+  //   modules: [
+  //     {
+  //       name: '微信群',
+  //       routerName: 'wechat',
+  //       component: Wechat,
+  //     },
+  //     {
+  //       name: 'QQ群',
+  //       routerName: 'qq',
+  //       component: Qq,
+  //     },
+  //   ],
+  // },
 ];
 
 export const navBarConfig = config.map((nav) => {

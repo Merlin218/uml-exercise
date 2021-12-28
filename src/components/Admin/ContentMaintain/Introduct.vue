@@ -11,6 +11,8 @@
       item
     }}</a-radio>
   </a-radio-group>
+<a-spin :loading="loading" dot style="width:100%" tip="加载中...">
+
   <a-table :data="list">
     <template #columns>
       <a-table-column title="ID" data-index="id" width="50"></a-table-column>
@@ -25,13 +27,14 @@
           <a-button
             type="primary"
             status="danger"
-            @click="handleDelete(record.id)"
+            @click="handleDelete(record)"
             >删除</a-button
           >
         </template>
       </a-table-column>
     </template>
   </a-table>
+  </a-spin>
 </template>
 
 <script setup>
@@ -42,10 +45,12 @@ import { deleteComment, getCommentByType } from '../../../api/module/comment';
 const type = ['全部', '学生评价', '教师自我评价', '社会评价'];
 
 const list = ref([]);
-
+const loading = ref(false);
 const getData = async (id) => {
+  loading.value = true;
   const res = await getCommentByType(id);
   list.value = res.data;
+  loading.value = false;
 };
 
 const indicatorType = ref(0);
@@ -59,12 +64,12 @@ onMounted(async () => {
   await getData(indicatorType.value);
 });
 
-const handleDelete = async (id) => {
-  const res = await deleteComment(id);
+const handleDelete = async (data) => {
+  const res = await deleteComment(data.id);
   Message.success({
     content: res.data,
     duration: 1000,
   });
-  await getData();
+  await getData(data.type);
 };
 </script>
